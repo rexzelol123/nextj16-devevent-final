@@ -1,24 +1,11 @@
-import React from 'react'
 import ExploreBtn from "@/components/ExploreBtn";
 import EventCard from "@/components/EventCard";
-import events from "@/lib/constants"
 import {IEvent} from "@/database";
 import {cacheLife} from "next/cache";
 
-/*const events = [
-    {
-        image: '/images/event1.png',
-        title: 'Event 1',
-        slug: 'event-1',
-        location: 'Location 1',
-        date: 'Date-1',
-        time: 'Time-1'
-    },
-]*/
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Page = async () => {
-
     'use cache';
     cacheLife('hours')
     const response = await fetch(`${BASE_URL}/api/events`);
@@ -26,8 +13,8 @@ const Page = async () => {
 
     return (
         <section>
-            <h1 className= "text-center">The Hub for Every Dev <br /> Event You Can't Miss</h1>
-            <p className="text-center mt-5">Hackathons, Meetups, and Conferences, All in One Place </p>
+            <h1 className="text-center">The Hub for Every Dev <br /> Event You Can't Miss</h1>
+            <p className="text-center mt-5">Hackathons, Meetups, and Conferences, All in One Place</p>
 
             <ExploreBtn />
 
@@ -42,11 +29,8 @@ const Page = async () => {
                     ))}
                 </ul>
             </div>
-
         </section>
-
-
-
     )
 }
-export default Page
+
+export default Page;

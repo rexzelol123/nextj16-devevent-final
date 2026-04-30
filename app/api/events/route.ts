@@ -44,8 +44,6 @@ export async function POST(req: NextRequest) {
             agenda: agenda,
         });
 
-        //const createdEvent = await Event.create(event);
-
         return NextResponse.json({ message: 'Event created successfully', event: createdEvent }, { status: 201 });
     } catch (e) {
         console.error(e);
